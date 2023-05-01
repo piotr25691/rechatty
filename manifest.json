@@ -1,18 +1,18 @@
 {
-  "id": "dev.replugged.ThemeTemplate",
-  "name": "Theme Template",
-  "description": "A theme template",
+  "id": "dev.alexrob.rechatty",
+  "name": "ReChatty",
+  "description": "Revival of Chatty",
   "author": {
-    "name": "replugged",
-    "discordID": "1000992611840049192",
-    "github": "replugged-org"
+    "name": "alex",
+    "discordID": "194474365646012416",
+    "github": "mrrobboss"
   },
-  "version": "1.0.0",
+  "version": "0.0.1",
   "updater": {
     "type": "github",
-    "id": "replugged-org/theme-template"
+    "id": "mrrobboss/rechatty"
   },
   "license": "MIT",
   "type": "replugged-theme",
-  "main": "src/main.css"
+  "main": "src/main.scss"
 }
