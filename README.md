@@ -1,3 +1,3 @@
-# Replugged theme template
-
-See the [theme development guide](https://guide.replugged.dev/docs/themes/getting-started) for more information on using this template.
+this is a wip theme, follow the
+[theme development guide](https://guide.replugged.dev/docs/themes/getting-started) for isntallation
+i guess
