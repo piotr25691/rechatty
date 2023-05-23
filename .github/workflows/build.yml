@@ -1,0 +1,42 @@
+name: Build
+
+on:
+    push:
+        branches:
+            - '*'
+    pull_request:
+        branches:
+            - '*'
+
+jobs:
+    build:
+        name: Build Vencord CSS
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Check out Git repository
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+
+            - uses: pnpm/action-setup@v2
+              with:
+                  version: latest
+
+            - name: Install Node.js dependencies
+              run: pnpm install
+
+            - name: Run linters
+              run: pnpm run build
+
+            - name: Append Vencord metadata
+              run: cd dist && echo -e "/**\n * @name Rechatty\n * @author berneseAlexxx#0001\n * @description Revival of Chatty\n * @version 0.0.4\n*/\n\n$(cat main.css)" > main.css
+
+            - name: Publish artifact
+              uses: actions/upload-artifact@v2
+              with:
+                  name: theme
+                  path: dist/main.css
