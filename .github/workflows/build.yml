@@ -36,7 +36,7 @@ jobs:
               run: pnpm run build
               
             - name: Get theme version
-              run: echo "VERSION=$(echo manifest.json | jq '.version')" >> $GITHUB_ENV
+              run: echo "VERSION=$(cat manifest.json | jq '.version')" >> $GITHUB_ENV
 
             - name: Append Vencord metadata
               run: cd dist && echo -e "/**\n * @name Rechatty\n * @author berneseAlexxx#0001\n * @description Revival of Chatty\n * @version ${{ env.VERSION }}\n*/\n\n$(cat main.css)" > main.css
