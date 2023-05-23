@@ -25,15 +25,21 @@ jobs:
             - uses: pnpm/action-setup@v2
               with:
                   version: latest
+                  
+            - name: Install jq
+              uses: dcarbone/install-jq-action@v1.0.1
 
             - name: Install Node.js dependencies
               run: pnpm install
 
             - name: Compile SCSS
               run: pnpm run build
+              
+            - name: Get theme version
+              run: VERSION=$(echo manifest.json | jq ".version")
 
             - name: Append Vencord metadata
-              run: cd dist && echo -e "/**\n * @name Rechatty\n * @author berneseAlexxx#0001\n * @description Revival of Chatty\n * @version 0.0.4\n*/\n\n$(cat main.css)" > main.css
+              run: cd dist && echo -e "/**\n * @name Rechatty\n * @author berneseAlexxx#0001\n * @description Revival of Chatty\n * @version $VERSION\n*/\n\n$(cat main.css)" > main.css
 
             - name: Publish artifact
               uses: actions/upload-artifact@v2
