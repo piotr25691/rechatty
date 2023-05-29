@@ -8,6 +8,7 @@
   --chatty-disabled: rgb(34, 26, 29);
   --chatty-accent: rgb(240, 28, 99);
   --chatty-corners: 16px;
+  --chatty-hyperlink: var(--chatty-accent);
 }
 .menu-2TXYjN {
   background: var(--chatty-bg1) !important;
@@ -36,7 +37,7 @@
   }
   [role="group"] {
     .submenu-3ycVEH {
-      padding: 8px;
+      padding: 0px;
     }
     padding: 5px 8px !important;
     border-radius: calc(var(--chatty-corners) / 1.5);
@@ -44,12 +45,9 @@
     background: var(--chatty-bg2);
     .labelContainer-35-WEd {
       background: var(--chatty-bg3) !important;
-      border-radius: calc(var(--chatty-corners) / 2);
+      border-radius: calc(var(--chatty-corners) / 3);
       margin-top: 4px;
     }
-  }
-  [role="group"]:nth-child(0) {
-    margin-top: 0px;
   }
 }
 .scrollerBase-1Pkza4::-webkit-scrollbar-track {
@@ -154,6 +152,22 @@
     }
     .scroller-kQBbkU::-webkit-scrollbar {
       width: 10px !important;
+    }
+    .scroller-kQBbkU {
+      .scrollerInner-2PPAp2 {
+        .message-2CShn3 {
+          .embedFull-1HGV2S {
+            border-radius: var(--chatty-corners) !important;
+            background: var(--chatty-bg1);
+            border-left: 0px;
+            border-bottom: calc(var(--chatty-corners) + 2px) solid #000;
+            box-shadow: var(--dark-elevation-high);
+          }
+          .markup-eYLPri a {
+            color: var(--chatty-hyperlink);
+          }
+        }
+      }
     }
     .content-1jQy2l::before {
       display: none;
@@ -289,3 +303,22 @@
     }
   }
 }*/
+// add @ to profile views
+.nameTag-35jqbZ::before {
+  content: "@";
+  color: var(--header-secondary);
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-display);
+  margin-right: 1px;
+}
+// add @ to profile pop up
+.userTagWithNickname-13lfvd::before {
+  content: "@";
+  color: var(--header-primary);
+  font-family: var(--font-primary);
+  line-height: 18px;
+  font-size: 14px;
+  margin-right: 1px;
+}
