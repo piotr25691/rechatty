@@ -1,14 +1,15 @@
 :root {
-  --chatty-bg0: rgb(27, 20, 23);
-  --chatty-bg1: rgb(46, 38, 40);
-  --chatty-bg2: rgb(61, 42, 49);
-  --chatty-bg3: rgb(85, 53, 65);
-  --chatty-bg4: rgb(117, 59, 78);
+  --chatty-bg0: rgba(27, 20, 23, 1);
+  --chatty-bg1: rgba(46, 38, 40, 1);
+  --chatty-bg2: rgba(61, 42, 49, 1);
+  --chatty-bg3: rgba(85, 53, 65, 1);
+  --chatty-bg4: rgba(117, 59, 78, 1);
   --chatty-icons: rgb(241, 181, 201);
   --chatty-disabled: rgb(34, 26, 29);
   --chatty-accent: rgb(240, 28, 99);
   --chatty-corners: 16px;
   --chatty-hyperlink: var(--chatty-accent);
+  --chatty-image: var(--chatty-bg0);
 }
 .menu-2TXYjN {
   background: var(--chatty-bg1) !important;
@@ -63,8 +64,11 @@
   border-radius: var(--chatty-corners);
   background: var(--chatty-bg1);
 }
+// app background
 .bg-1QIAus {
-  background: var(--chatty-bg0) !important;
+  background: var(--chatty-image) !important;
+  background-size: cover;
+  filter: blur(40px);
 }
 .tree-3agP2X {
   padding-left: 10px;
